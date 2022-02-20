@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/19 21:25:56 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/20 22:16:58 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ int	main(int argc, char **argv)
 	char	**map;
 	int		error;
 
-
 	error = 0;
+	var.flag_0 = 0;
+	var.flag_1 = 0;
+	var.flag_c = 0;
+	var.flag_e = 0;
+	var.flag_p = 0;
 	if (argc != 2)
 	{
 		ft_putstr_fd("too few arguments\n", 1);

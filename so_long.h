@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/19 21:25:40 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/20 22:16:21 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ typedef struct	s_var{
 	int		map_x;
 	int		map_y;
 	int		size_check;
+	int		flag_p;
+	int		flag_c;
+	int		flag_e;
+	int		flag_1;
+	int		flag_0;
 	t_gnl	*gnl;
 }	t_var;
 
