@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:10:24 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/19 21:31:44 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/22 00:15:44 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,19 @@ static int	get_y(char *map)
 
 static char	**store(char **rtn, char *map, t_var *var)
 {
-	char	buffer[1];
-	int		i;
-	int		fd;
+	unsigned int	i;
+	int				fd;
 
-	i = -1;
+	i = 0;
 	fd = open(map, O_RDONLY);
-	while (++i < var->map_y)
+	while (i < var->map_y)
 	{
 		var->gnl = get_next_line(fd);
 		rtn[i] = (char *)var->gnl->build;
+		i++;
 	}
 	close(fd);
-	free(var->gnl->stat);
+	//free(var->gnl->stat);
 	return (rtn);
 }
 

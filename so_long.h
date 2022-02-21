@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/20 22:16:21 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/22 00:12:15 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ typedef struct	s_var{
 	void	*tex_consum;
 	int		consum_width;
 	int		consum_height;
-	int		map_x;
-	int		map_y;
+	unsigned int		map_x;
+	unsigned int		map_y;
 	int		size_check;
 	int		flag_p;
 	int		flag_c;
 	int		flag_e;
 	int		flag_1;
 	int		flag_0;
-	t_gnl	*gnl;
+	struct s_gnl	*gnl;
 }	t_var;
 
 // gnl pointers

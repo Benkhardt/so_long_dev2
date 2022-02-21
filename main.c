@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/20 22:16:58 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/22 00:28:08 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	int		error;
 
 	error = 0;
+	// should init
 	var.flag_0 = 0;
 	var.flag_1 = 0;
 	var.flag_c = 0;
@@ -37,4 +38,16 @@ int	main(int argc, char **argv)
 		return (-2);
 	}
 	check_map(&var, map, &error);
+	if (error)
+	{
+		ft_putstr_fd("Error\n", 1);
+		return (-3);
+	}
+	var.mlx = mlx_init();
+	if (var.mlx == NULL)
+		return (-4);
+	var.win = mlx_new_window(var.mlx, var.map_x * 63, var.map_y * 63, "so_long");
+	if (var.win == NULL)
+		return (-4);
+	mlx_loop(var.mlx);
 }
