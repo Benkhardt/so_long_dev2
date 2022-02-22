@@ -6,7 +6,7 @@
 #    By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 12:04:48 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/02/22 00:05:42 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/02/22 16:57:55 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,11 @@ NAME= so_long
 
 SRC=	main.c\
 		check_map.c\
-		store_map.c
+		store_map.c\
+		sl_init.c\
+		sl_loadtex.c\
+		sl_buildmap.c\
+		draw_utils.c
 
 LIBDIR= ./libft
 LIBFT= libft/libft.a

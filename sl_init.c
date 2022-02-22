@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   sl_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:57:19 by dbenkhar         ###   ########.fr       */
+/*   Created: 2022/02/22 13:06:14 by dbenkhar          #+#    #+#             */
+/*   Updated: 2022/02/22 13:15:46 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "libft/libft.h"
-# include "minilibx/mlx.h"
-# include "gnl/get_next_line.h"
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <fcntl.h>
+void	sl_init(t_var *var, int *error)
+{
+	var->exit_width = 0;
+	var->exit_height = 0;
+	var->player_height = 0;
+	var->player_width = 0;
+	var->ppos_x = 0;
+	var->ppos_y = 0;
+	var->field_height = 0;
+	var->field_width = 0;
+	var->wall_height = 0;
+	var->wall_width = 0;
+	var->consum_height =0;
+	var->consum_width = 0;
+	var->map_x = 0;
+	var->map_y = 0;
+	var->size_check = 0;
+	var->flag_0 = 0;
+	var->flag_1 = 0;
+	var->flag_c = 0;
+	var->flag_e = 0;
+	var->flag_p = 0;
+	error[0] = 0;
+}
 
-// ppos_x/y describes the player position
-// x = 0 & y = 0 left top corner
-typedef struct	s_var{
+/*
 	void	*mlx;
 	void	*win;
 	void	*img;
@@ -53,34 +67,4 @@ typedef struct	s_var{
 	int		flag_1;
 	int		flag_0;
 	struct s_gnl	*gnl;
-}	t_var;
-
-// gnl pointers
-typedef struct	s_gnl{
-	void	*build;
-	void	*stat;
-}	t_gnl;
-
-t_gnl	*get_next_line(int fd);
-
-void	sl_init(t_var *var, int *error);
-
-void	check_map(t_var *var, char **map, int *error);
-
-char	**store_map(t_var *var, char *map);
-
-void	sl_loadtex(t_var *var);
-
-void	sl_buildmap(t_var *var, char **map);
-
-int		draw_wall(t_var *var, int x, int y);
-
-int		draw_exit(t_var *var, int x, int y);
-
-int		draw_field(t_var *var, int x, int y);
-
-int		draw_player(t_var *var, int x, int y);
-
-int		draw_cons(t_var * var, int x, int y);
-
-#endif
+*/

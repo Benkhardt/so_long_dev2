@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:10:24 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 00:15:44 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:40:13 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ static char	**store(char **rtn, char *map, t_var *var)
 
 	i = 0;
 	fd = open(map, O_RDONLY);
+	if (fd < 0)
+	{
+		free(rtn);
+		return (NULL);
+	}
 	while (i < var->map_y)
 	{
 		var->gnl = get_next_line(fd);
@@ -59,7 +64,8 @@ static char	**store(char **rtn, char *map, t_var *var)
 		i++;
 	}
 	close(fd);
-	//free(var->gnl->stat);
+	free(var->gnl->stat);
+	free(var->gnl);
 	return (rtn);
 }
 
