@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:55:40 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/23 20:59:20 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("invalid map\n", 1);
 		return (-3);
 	}
+	printf("x(%d) y(%d)\n", var.player_x, var.player_y);
 	var.mlx = mlx_init();
 	if (var.mlx == NULL)
 		return (-4);

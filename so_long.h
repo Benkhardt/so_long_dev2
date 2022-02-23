@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:57:19 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/23 20:51:46 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct	s_var{
 	int		flag_e;
 	int		flag_1;
 	int		flag_0;
+	unsigned int		player_x;
+	unsigned int		player_y;
 	struct s_gnl	*gnl;
 }	t_var;
 
