@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 20:51:46 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:55:37 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+
+# define ESC_KEY 0
+# define A_KEY 0
+# define S_KEY 0 
+# define D_KEY 0
+# define W_KEY 0
 
 // ppos_x/y describes the player position
 // x = 0 & y = 0 left top corner

@@ -6,11 +6,19 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 20:59:20 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/23 21:48:38 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static int	sl_close(int keycode, t_var *var, char **map)
+{
+	var->player_y = var->player_y - 1;
+	mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->player_x * 63, var->player_y * 63);
+	mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->player_x * 63, (var->player_y + 1) * 63);
+	return (keycode);
+}
 
 int	main(int argc, char **argv)
 {
@@ -46,5 +54,6 @@ int	main(int argc, char **argv)
 	if (var.win == NULL)
 		return (-4);
 	sl_buildmap(&var, map);
+	sl_hook(&var, map);
 	mlx_loop(var.mlx);
 }
