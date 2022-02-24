@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_hook.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:46:56 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 21:57:35 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:36:36 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	key_hook(int keycode, t_var *var, char **map)
 }
 
 
-//somehow have to get map stored to struct t_var...
+// somehow have to get map stored to struct t_var...
 
 void	sl_hook(t_var *var, char **map)
 {
-	mlx_key_hook(var->win, key_hook, var)
+	mlx_key_hook(var->win, key_hook, var);
 }

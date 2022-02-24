@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 21:24:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 21:09:22 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:11:59 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	find_playerpos(t_var *var, char **map)
 		{
 			if (map[y_i][x_i] == 'P')
 			{
-				var->player_x = x_i;
-				var->player_y = y_i;
+				var->p_x = x_i;
+				var->p_y = y_i;
 			}
 			x_i++;
 		}

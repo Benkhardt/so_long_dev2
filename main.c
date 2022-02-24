@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 21:48:38 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:12:32 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-static int	sl_close(int keycode, t_var *var, char **map)
-{
-	var->player_y = var->player_y - 1;
-	mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->player_x * 63, var->player_y * 63);
-	mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->player_x * 63, (var->player_y + 1) * 63);
-	return (keycode);
-}
 
 int	main(int argc, char **argv)
 {
@@ -45,7 +37,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("invalid map\n", 1);
 		return (-3);
 	}
-	printf("x(%d) y(%d)\n", var.player_x, var.player_y);
+	printf("x(%d) y(%d)\n", var.p_x, var.p_y);
 	var.mlx = mlx_init();
 	if (var.mlx == NULL)
 		return (-4);

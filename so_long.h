@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/23 21:55:37 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:11:02 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define ESC_KEY 0
-# define A_KEY 0
-# define S_KEY 0 
-# define D_KEY 0
-# define W_KEY 0
+# define ESC_KEY 65307
+# define A_KEY 97
+# define W_KEY 119
+# define S_KEY 115
+# define D_KEY 100
 
 // ppos_x/y describes the player position
 // x = 0 & y = 0 left top corner
@@ -50,16 +50,16 @@ typedef struct	s_var{
 	void	*tex_consum;
 	int		consum_width;
 	int		consum_height;
-	unsigned int		map_x;
-	unsigned int		map_y;
+	unsigned int	map_x;
+	unsigned int	map_y;
 	int		size_check;
 	int		flag_p;
 	int		flag_c;
 	int		flag_e;
 	int		flag_1;
 	int		flag_0;
-	unsigned int		player_x;
-	unsigned int		player_y;
+	unsigned int	p_x;
+	unsigned int	p_y;
 	struct s_gnl	*gnl;
 }	t_var;
 
