@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 15:38:12 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:30:51 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,43 +29,43 @@
 
 // ppos_x/y describes the player position
 // x = 0 & y = 0 left top corner
-typedef struct	s_var{
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*tex_exit;
-	int		exit_width;
-	int		exit_height;
-	void	*tex_player;
-	int		player_width;
-	int		player_height;
-	int		ppos_x;
-	int		ppos_y;
-	void	*tex_field;
-	int		field_width;
-	int		field_height;
-	void	*tex_wall;
-	int		wall_width;
-	int		wall_height;
-	void	*tex_consum;
-	int		consum_width;
-	int		consum_height;
+typedef struct s_var{
+	void			*mlx;
+	void			*win;
+	void			*img;
+	void			*tex_exit;
+	int				exit_width;
+	int				exit_height;
+	void			*tex_player;
+	int				player_width;
+	int				player_height;
+	int				ppos_x;
+	int				ppos_y;
+	void			*tex_field;
+	int				field_width;
+	int				field_height;
+	void			*tex_wall;
+	int				wall_width;
+	int				wall_height;
+	void			*tex_consum;
+	int				consum_width;
+	int				consum_height;
 	unsigned int	map_x;
 	unsigned int	map_y;
-	int		size_check;
-	int		flag_p;
-	int		flag_c;
-	int		flag_e;
-	int		flag_1;
-	int		flag_0;
+	int				size_check;
+	int				flag_p;
+	int				flag_c;
+	int				flag_e;
+	int				flag_1;
+	int				flag_0;
 	unsigned int	p_x;
 	unsigned int	p_y;
-	void	**map;
+	void			**map;
 	struct s_gnl	*gnl;
 }	t_var;
 
 // gnl pointers
-typedef struct	s_gnl{
+typedef struct s_gnl{
 	void	*build;
 	void	*stat;
 }	t_gnl;
@@ -90,7 +90,7 @@ int		draw_field(t_var *var, int x, int y);
 
 int		draw_player(t_var *var, int x, int y);
 
-int		draw_cons(t_var * var, int x, int y);
+int		draw_cons(t_var *var, int x, int y);
 
 void	sl_hook(t_var *var);
 
@@ -102,6 +102,8 @@ void	move_up(t_var *var, char **map);
 
 void	move_down(t_var *var, char **map);
 
-int	close_window(t_var *var);
+void	print_map(char **map, unsigned int y);
+
+int		close_window(t_var *var);
 
 #endif

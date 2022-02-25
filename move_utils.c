@@ -6,13 +6,13 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:38:26 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 16:40:37 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:26:35 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	print_map(char **map, unsigned int y)
+void	print_map(char **map, unsigned int y)
 {
 	unsigned int	i;
 
@@ -47,31 +47,27 @@ void	move_up(t_var *var, char **map)
 	int	move[2];
 
 	check = -1;
-	move[0] = 0; // x, nothing happens to x if we move up
-	move[1] = -1; // y, we moving up
+	move[0] = 0;
+	move[1] = -1;
 	check_move(move, &check, var, map);
-	if (check == 0) // field
+	if (check == 0)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->p_x * 63, (var->p_y - 1) * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
-		map[var->p_y][var->p_x] = '0';
 	}
-	else if (check == 1) // wall or exit if still consumables available on map (flag_c > 0)
+	else if (check == 1)
 		return ;
-	else if (check == 2) // coll
+	else if (check == 2)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->p_x * 63, (var->p_y - 1) * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
 		var->flag_c--;
-		map[var->p_y][var->p_x] = '0';
 	}
 	else if (check == 3)
 	 	close_window(var);
 	var->p_y--;
 	map[var->p_y][var->p_x] = 'P';
-	print_map(map, var->map_y);
-	ft_putnbr_fd(var->flag_c, 1);
-	ft_putchar_fd('\n', 1);
+	map[var->p_y + 1][var->p_x] = '0';
 }
 
 void	move_down(t_var *var, char **map)
@@ -80,29 +76,27 @@ void	move_down(t_var *var, char **map)
 	int	move[2];
 
 	check = -1;
-	move[0] = 0; // x, nothing happens to x if we move up
-	move[1] = 1; // y, we moving up
+	move[0] = 0;
+	move[1] = 1;
 	check_move(move, &check, var, map);
-	if (check == 0) // field
+	if (check == 0)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->p_x * 63, (var->p_y + 1) * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
-		map[var->p_y][var->p_x] = '0';
 	}
-	else if (check == 1) // wall or exit if still consumables available on map (flag_c > 0)
+	else if (check == 1)
 		return ;
-	else if (check == 2) // coll
+	else if (check == 2)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, var->p_x * 63, (var->p_y + 1) * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
 		var->flag_c--;
-		map[var->p_y][var->p_x] = '0';
 	}
 	else if (check == 3)
 	 	close_window(var);
 	var->p_y++;
 	map[var->p_y][var->p_x] = 'P';
-	print_map(map, var->map_y);
+	map[var->p_y - 1][var->p_x] = '0';
 }
 
 void	move_left(t_var *var, char **map)
@@ -111,29 +105,27 @@ void	move_left(t_var *var, char **map)
 	int	move[2];
 
 	check = -1;
-	move[0] = -1; // x, nothing happens to x if we move up
-	move[1] = 0; // y, we moving up
+	move[0] = -1;
+	move[1] = 0;
 	check_move(move, &check, var, map);
-	if (check == 0) // field
+	if (check == 0)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, (var->p_x - 1) * 63, var->p_y * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
-		map[var->p_y][var->p_x] = '0';
 	}
-	else if (check == 1) // wall or exit if still consumables available on map (flag_c > 0)
+	else if (check == 1)
 		return ;
-	else if (check == 2) // coll
+	else if (check == 2)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, (var->p_x - 1) * 63, var->p_y * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
 		var->flag_c--;
-		map[var->p_y][var->p_x] = '0';
 	}
 	else if (check == 3)
 	 	close_window(var);
 	var->p_x--;
 	map[var->p_y][var->p_x] = 'P';
-	print_map(map, var->map_y);
+	map[var->p_y][var->p_x + 1] = '0';
 }
 
 void	move_right(t_var *var, char **map)
@@ -142,27 +134,25 @@ void	move_right(t_var *var, char **map)
 	int	move[2];
 
 	check = -1;
-	move[0] = 1; // x, nothing happens to x if we move up
-	move[1] = 0; // y, we moving up
+	move[0] = 1;
+	move[1] = 0;
 	check_move(move, &check, var, map);
-	if (check == 0) // field
+	if (check == 0)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, (var->p_x + 1) * 63, var->p_y * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
-		map[var->p_y][var->p_x] = '0';
 	}
-	else if (check == 1) // wall or exit if still consumables available on map (flag_c > 0)
+	else if (check == 1)
 		return ;
-	else if (check == 2) // coll
+	else if (check == 2)
 	{
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_player, (var->p_x + 1) * 63, var->p_y * 63);
 		mlx_put_image_to_window(var->mlx, var->win, var->tex_field, var->p_x * 63, var->p_y * 63);
 		var->flag_c--;
-		map[var->p_y][var->p_x] = '0';
 	}
 	else if (check == 3)
 	 	close_window(var);
 	var->p_x++;
 	map[var->p_y][var->p_x] = 'P';
-	print_map(map, var->map_y);
+	map[var->p_y][var->p_x - 1] = '0';
 }

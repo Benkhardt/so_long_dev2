@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:06:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/24 21:11:22 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:34:55 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sl_init(t_var *var, int *error)
 	var->field_width = 0;
 	var->wall_height = 0;
 	var->wall_width = 0;
-	var->consum_height =0;
+	var->consum_height = 0;
 	var->consum_width = 0;
 	var->map_x = 0;
 	var->map_y = 0;

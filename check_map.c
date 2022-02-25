@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 21:24:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/24 21:11:59 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:31:13 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ static int	check_line(t_var *var, char *line)
 void	check_map(t_var *var, char **map, int *error)
 {
 	unsigned int	i;
-	// unsigned int	length;
 
 	i = 0;
 	if (check_updown(var, map[i]))
@@ -88,7 +87,6 @@ void	check_map(t_var *var, char **map, int *error)
 	while (++i < var->map_y)
 	{
 		error[0] = check_line(var, map[i]);
-		// error[0] = check_order(var, map[i]);
 		if (error[0])
 			break ;
 	}

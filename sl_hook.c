@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:46:56 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 16:38:37 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:31:44 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,9 @@ static int	key_hook(int keycode, t_var *var)
 		move_right(var, (char **)var->map);
 	else if (keycode == W_KEY)
 		move_up(var, (char **)var->map);
+	print_map((char **)var->map, var->map_y);
 	return (0);
 }
-
-
-// somehow have to get map stored to struct t_var...
 
 void	sl_hook(t_var *var)
 {
