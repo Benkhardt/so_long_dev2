@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+         #
+#    By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 12:04:48 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/02/22 16:57:55 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/02/25 15:35:40 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRC=	main.c\
 		sl_init.c\
 		sl_loadtex.c\
 		sl_buildmap.c\
-		draw_utils.c
+		draw_utils.c\
+		sl_hook.c\
+		move_utils.c
 
 LIBDIR= ./libft
 LIBFT= libft/libft.a

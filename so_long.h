@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/24 21:11:02 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:38:12 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct	s_var{
 	int		flag_0;
 	unsigned int	p_x;
 	unsigned int	p_y;
+	void	**map;
 	struct s_gnl	*gnl;
 }	t_var;
 
@@ -90,5 +91,15 @@ int		draw_field(t_var *var, int x, int y);
 int		draw_player(t_var *var, int x, int y);
 
 int		draw_cons(t_var * var, int x, int y);
+
+void	sl_hook(t_var *var);
+
+void	move_right(t_var *var, char **map);
+
+void	move_left(t_var *var, char **map);
+
+void	move_up(t_var *var, char **map);
+
+void	move_down(t_var *var, char **map);
 
 #endif

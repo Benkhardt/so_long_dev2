@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:00:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/24 21:12:32 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:39:50 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("invalid map\n", 1);
 		return (-3);
 	}
+	var.map = (void **)map;
 	printf("x(%d) y(%d)\n", var.p_x, var.p_y);
 	var.mlx = mlx_init();
 	if (var.mlx == NULL)
@@ -46,6 +47,6 @@ int	main(int argc, char **argv)
 	if (var.win == NULL)
 		return (-4);
 	sl_buildmap(&var, map);
-	sl_hook(&var, map);
+	sl_hook(&var);
 	mlx_loop(var.mlx);
 }

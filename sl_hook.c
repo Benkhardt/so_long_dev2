@@ -6,31 +6,37 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:46:56 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/24 20:36:36 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:37:56 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	key_hook(int keycode, t_var *var, char **map)
+static int	close_window(t_var *var)
+{
+	exit(var->flag_c);
+}
+
+static int	key_hook(int keycode, t_var *var)
 {
 	if (keycode == ESC_KEY)
 		close_window(var);
 	else if (keycode == A_KEY)
-		move_left(var, map);
+		move_left(var, (char **)var->map);
 	else if (keycode == S_KEY)
-		move_bottom(var, map);
+		move_down(var, (char **)var->map);
 	else if (keycode == D_KEY)
-		move_right(var, map);
+		move_right(var, (char **)var->map);
 	else if (keycode == W_KEY)
-		move_up(var, map);
+		move_up(var, (char **)var->map);
 	return (0);
 }
 
 
 // somehow have to get map stored to struct t_var...
 
-void	sl_hook(t_var *var, char **map)
+void	sl_hook(t_var *var)
 {
 	mlx_key_hook(var->win, key_hook, var);
+	mlx_hook(var->win, 17, (1L << 17), close_window, var);
 }
