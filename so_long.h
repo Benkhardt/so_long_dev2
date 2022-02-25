@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 17:30:51 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:40:58 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ typedef struct s_var{
 	void			*tex_player;
 	int				player_width;
 	int				player_height;
-	int				ppos_x;
-	int				ppos_y;
 	void			*tex_field;
 	int				field_width;
 	int				field_height;
@@ -52,7 +50,7 @@ typedef struct s_var{
 	int				consum_height;
 	unsigned int	map_x;
 	unsigned int	map_y;
-	int				size_check;
+	int				check;
 	int				flag_p;
 	int				flag_c;
 	int				flag_e;
@@ -80,7 +78,7 @@ char	**store_map(t_var *var, char *map);
 
 void	sl_loadtex(t_var *var);
 
-void	sl_buildmap(t_var *var, char **map);
+void	sl_buildmap(t_var *var);
 
 int		draw_wall(t_var *var, int x, int y);
 
@@ -102,8 +100,10 @@ void	move_up(t_var *var, char **map);
 
 void	move_down(t_var *var, char **map);
 
-void	print_map(char **map, unsigned int y);
+// void	print_map(char **map, unsigned int y);
 
 int		close_window(t_var *var);
+
+void	sl_driver(t_var *var);
 
 #endif

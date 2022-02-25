@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_buildmap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:37:19 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:58:57 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:37:20 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ static void	draw_x(t_var *var, int y, char *map)
 	}
 }
 
-void	sl_buildmap(t_var *var, char **map)
+void	sl_buildmap(t_var *var)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (i < var->map_y)
 	{
-		draw_x(var, i * 63, map[i]);
+		draw_x(var, i * 63, (char *)var->map[i]);
 		i++;
 	}
 }

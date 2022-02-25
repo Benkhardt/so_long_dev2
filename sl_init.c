@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:06:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 17:34:55 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:55:13 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	sl_init(t_var *var, int *error)
 	var->exit_height = 0;
 	var->player_height = 0;
 	var->player_width = 0;
-	var->ppos_x = 0;
-	var->ppos_y = 0;
 	var->field_height = 0;
 	var->field_width = 0;
 	var->wall_height = 0;
@@ -28,7 +26,7 @@ void	sl_init(t_var *var, int *error)
 	var->consum_width = 0;
 	var->map_x = 0;
 	var->map_y = 0;
-	var->size_check = 0;
+	var->check = 0;
 	var->flag_0 = 0;
 	var->flag_1 = 0;
 	var->flag_c = 0;

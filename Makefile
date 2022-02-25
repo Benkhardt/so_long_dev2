@@ -6,7 +6,7 @@
 #    By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 12:04:48 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/02/25 15:35:40 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/02/25 18:35:14 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC=	main.c\
 		sl_buildmap.c\
 		draw_utils.c\
 		sl_hook.c\
-		move_utils.c
+		move_utils.c\
+		sl_driver.c
 
 LIBDIR= ./libft
 LIBFT= libft/libft.a

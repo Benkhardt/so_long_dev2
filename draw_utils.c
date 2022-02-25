@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:54:40 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/22 16:59:44 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:30:44 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	draw_player(t_var *var, int x, int y)
 	return (63);
 }
 
-int	draw_cons(t_var * var, int x, int y)
+int	draw_cons(t_var *var, int x, int y)
 {
 	mlx_put_image_to_window(var->mlx, var->win, var->tex_consum, x, y);
 	return (63);
