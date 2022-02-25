@@ -52,6 +52,7 @@ static char	**store(char **rtn, char *map, t_var *var)
 
 	i = 0;
 	fd = open(map, O_RDONLY);
+	var->gnl = NULL;
 	if (fd < 0)
 	{
 		free(rtn);
@@ -59,6 +60,8 @@ static char	**store(char **rtn, char *map, t_var *var)
 	}
 	while (i < var->map_y)
 	{
+		if (var->gnl != NULL)
+			free(var->gnl);
 		var->gnl = get_next_line(fd);
 		rtn[i] = (char *)var->gnl->build;
 		i++;

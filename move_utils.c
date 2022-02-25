@@ -66,7 +66,7 @@ void	move_up(t_var *var, char **map)
 		map[var->p_y][var->p_x] = '0';
 	}
 	else if (check == 3)
-	 	sl_close();
+	 	close_window(var);
 	var->p_y--;
 	map[var->p_y][var->p_x] = 'P';
 	print_map(map, var->map_y);
@@ -98,10 +98,8 @@ void	move_down(t_var *var, char **map)
 		var->flag_c--;
 		map[var->p_y][var->p_x] = '0';
 	}
-	else
-		return ;
-	// else if (check == 3)
-	// 	sl_close();
+	else if (check == 3)
+	 	close_window(var);
 	var->p_y++;
 	map[var->p_y][var->p_x] = 'P';
 	print_map(map, var->map_y);
@@ -131,10 +129,8 @@ void	move_left(t_var *var, char **map)
 		var->flag_c--;
 		map[var->p_y][var->p_x] = '0';
 	}
-	else
-		return ;
-	// else if (check == 3)
-	// 	sl_close();
+	else if (check == 3)
+	 	close_window(var);
 	var->p_x--;
 	map[var->p_y][var->p_x] = 'P';
 	print_map(map, var->map_y);
@@ -164,10 +160,8 @@ void	move_right(t_var *var, char **map)
 		var->flag_c--;
 		map[var->p_y][var->p_x] = '0';
 	}
-	else
-		return ;
-	// else if (check == 3)
-	// 	sl_close();
+	else if (check == 3)
+	 	close_window(var);
 	var->p_x++;
 	map[var->p_y][var->p_x] = 'P';
 	print_map(map, var->map_y);

@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-static int	close_window(t_var *var)
+int	close_window(t_var *var)
 {
 	unsigned int	i;
 

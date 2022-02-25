@@ -102,4 +102,6 @@ void	move_up(t_var *var, char **map);
 
 void	move_down(t_var *var, char **map);
 
+int	close_window(t_var *var);
+
 #endif
