@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:38:26 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 16:04:13 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:40:37 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ void	move_up(t_var *var, char **map)
 		var->flag_c--;
 		map[var->p_y][var->p_x] = '0';
 	}
-	else
-		return ;
-	// else if (check == 3)
-	// 	sl_close();
+	else if (check == 3)
+	 	sl_close();
 	var->p_y--;
 	map[var->p_y][var->p_x] = 'P';
 	print_map(map, var->map_y);
+	ft_putnbr_fd(var->flag_c, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	move_down(t_var *var, char **map)

@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:46:56 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 15:37:56 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:38:37 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 static int	close_window(t_var *var)
 {
-	exit(var->flag_c);
+	unsigned int	i;
+
+	i = 0;
+	while (i < var->map_y)
+		free(var->map[i++]);
+	free(var->map);
+	mlx_clear_window(var->mlx, var->win);
+	mlx_destroy_window(var->mlx, var->win);
+	mlx_destroy_display(var->mlx);
+	mlx_loop_end(var->mlx);
+	exit(0);
 }
 
 static int	key_hook(int keycode, t_var *var)
