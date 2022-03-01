@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:46:56 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 18:33:24 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:36:33 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	close_window(t_var *var)
 	while (i < var->map_y)
 		free(var->map[i++]);
 	free(var->map);
+	free(var->tex_consum);
+	free(var->tex_exit);
+	free(var->tex_field);
+	free(var->tex_player);
+	free(var->tex_wall);
 	mlx_clear_window(var->mlx, var->win);
 	mlx_destroy_window(var->mlx, var->win);
 	mlx_destroy_display(var->mlx);
