@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:06:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 17:55:13 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:27:09 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,35 +36,3 @@ void	sl_init(t_var *var, int *error)
 	var->p_y = 0;
 	error[0] = 0;
 }
-
-/*
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*tex_exit;
-	int		exit_width;
-	int		exit_height;
-	void	*tex_player;
-	int		player_width;
-	int		player_height;
-	int		ppos_x;
-	int		ppos_y;
-	void	*tex_field;
-	int		field_width;
-	int		field_height;
-	void	*tex_wall;
-	int		wall_width;
-	int		wall_height;
-	void	*tex_consum;
-	int		consum_width;
-	int		consum_height;
-	unsigned int		map_x;
-	unsigned int		map_y;
-	int		size_check;
-	int		flag_p;
-	int		flag_c;
-	int		flag_e;
-	int		flag_1;
-	int		flag_0;
-	struct s_gnl	*gnl;
-*/

@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 21:24:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 17:31:13 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:31:28 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	check_map(t_var *var, char **map, int *error)
 	}
 	if (check_updown(var, map[i - 1]))
 		error[0] = -1;
-	if (!(var->flag_c && var->flag_e && var->flag_p))
+	if (!(var->flag_c && var->flag_e) || var->flag_p != 1)
 		error[0] = -1;
 	find_playerpos(var, map);
 	if (error[0] == -1)
