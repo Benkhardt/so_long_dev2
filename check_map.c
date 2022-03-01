@@ -12,6 +12,19 @@
 
 #include "so_long.h"
 
+static void	sl_error_free(t_var *var, char **map)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < var->map_y)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
+
 static void	find_playerpos(t_var *var, char **map)
 {
 	unsigned int	x_i;
@@ -95,4 +108,6 @@ void	check_map(t_var *var, char **map, int *error)
 	if (!(var->flag_c && var->flag_e && var->flag_p))
 		error[0] = -1;
 	find_playerpos(var, map);
+	if (error[0] == -1)
+		sl_error_free(var, map);
 }

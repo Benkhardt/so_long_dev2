@@ -25,11 +25,6 @@ int	close_window(t_var *var)
 	mlx_destroy_image(var->mlx, var->tex_field);
 	mlx_destroy_image(var->mlx, var->tex_player);
 	mlx_destroy_image(var->mlx, var->tex_wall);
-	// free(var->tex_consum);
-	// free(var->tex_exit);
-	// free(var->tex_field);
-	// free(var->tex_player);
-	// free(var->tex_wall);
 	mlx_clear_window(var->mlx, var->win);
 	mlx_destroy_window(var->mlx, var->win);
 	mlx_destroy_display(var->mlx);
