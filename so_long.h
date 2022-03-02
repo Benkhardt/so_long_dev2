@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 18:40:58 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:30:24 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define S_KEY 115
 # define D_KEY 100
 
-// ppos_x/y describes the player position
+// p_x/y describes the player position
 // x = 0 & y = 0 left top corner
 typedef struct s_var{
 	void			*mlx;
@@ -59,6 +59,7 @@ typedef struct s_var{
 	unsigned int	p_x;
 	unsigned int	p_y;
 	void			**map;
+	unsigned int	moves;
 	struct s_gnl	*gnl;
 }	t_var;
 

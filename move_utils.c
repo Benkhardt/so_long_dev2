@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:38:26 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/02/25 18:47:28 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:52:00 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ void	move_up(t_var *var, char **map)
 	var->p_y--;
 	map[var->p_y][var->p_x] = 'P';
 	map[var->p_y + 1][var->p_x] = '0';
-	ft_putstr_fd("move up\n", 1);
+	ft_putstr_fd("move up, total movements: ", 1);
+	ft_putnbr_fd((int)++var->moves, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	move_down(t_var *var, char **map)
@@ -90,7 +92,9 @@ void	move_down(t_var *var, char **map)
 	var->p_y++;
 	map[var->p_y][var->p_x] = 'P';
 	map[var->p_y - 1][var->p_x] = '0';
-	ft_putstr_fd("move down\n", 1);
+	ft_putstr_fd("move down, total movements: ", 1);
+	ft_putnbr_fd((int)++var->moves, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	move_left(t_var *var, char **map)
@@ -116,7 +120,9 @@ void	move_left(t_var *var, char **map)
 	var->p_x--;
 	map[var->p_y][var->p_x] = 'P';
 	map[var->p_y][var->p_x + 1] = '0';
-	ft_putstr_fd("move left\n", 1);
+	ft_putstr_fd("move left, total movements: ", 1);
+	ft_putnbr_fd((int)++var->moves, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	move_right(t_var *var, char **map)
@@ -142,5 +148,7 @@ void	move_right(t_var *var, char **map)
 	var->p_x++;
 	map[var->p_y][var->p_x] = 'P';
 	map[var->p_y][var->p_x - 1] = '0';
-	ft_putstr_fd("move right\n", 1);
+	ft_putstr_fd("move right, total movements: ", 1);
+	ft_putnbr_fd((int)++var->moves, 1);
+	ft_putchar_fd('\n', 1);
 }

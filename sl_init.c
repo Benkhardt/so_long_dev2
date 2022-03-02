@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:06:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/01 15:27:09 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:30:30 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	sl_init(t_var *var, int *error)
 	var->flag_p = 0;
 	var->p_x = 0;
 	var->p_y = 0;
+	var->moves = 0;
 	error[0] = 0;
 }
