@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:39:07 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/01 20:30:24 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:09:53 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "minilibx/mlx.h"
 # include "gnl/get_next_line.h"
 # include <unistd.h>
-# include <stdio.h>
+//# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
