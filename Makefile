@@ -6,7 +6,7 @@
 #    By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 12:04:48 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/02/25 18:35:14 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/03/03 17:09:21 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ MLX= minilibx/libmlx.a
 GNL= gnl/*.c
 
 CC= gcc
-FLAGS= -Wall -Werror -Wextra -g3
+FLAGS= -Wall -Werror -Wextra
 
 OS := $(shell uname)
 
